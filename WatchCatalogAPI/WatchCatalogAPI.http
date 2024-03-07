@@ -1,4 +1,4 @@
-@WatchCatalogAPI_HostAddress = http://localhost:5091
+@WatchCatalogAPI_HostAddress = https://azureintegrationwatchcatalog.azurewebsites.net/
 
 GET {{WatchCatalogAPI_HostAddress}}/weatherforecast/
 Accept: application/json

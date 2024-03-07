@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using WatchCatalogAPI.Models;
+
 namespace WatchCatalogAPI
 {
     public class Program
@@ -8,6 +11,8 @@ namespace WatchCatalogAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<WatchDBContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("AzureDbConnection")));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
